@@ -1,0 +1,27 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}
+<div class="container">
+    <img src="{{leader.post.image.cdn_url}}" width="100%" height="600px" alt="{{leader.post.title}}">
+    
+</div>
+<div class="container">
+    <div class="row">
+        {% for posts in all_posts %}
+        <div class="card" style="height: 50%; width: 30%; margin-top: 100px; margin-left: 30px; margin-bottom: 20px; box-shadow: 2px 2px 5px grey;">
+                <a href="{% url 'single_post' posts.title%}"><img src="{{posts.image.cdn_url}}" class="card-img-top" alt="{{posts.title}}" style="  height: 200px;"></a>
+                <div class="card-body">
+                  <h5 class="card-title">{{posts.title}}</h5>
+                  <hr>
+                  <a href="{{posts.url}}"><button type="button" class="btn btn-info" style="height:;">view site</button></a>
+                  <p style="float: right;">Posted: {{posts.posted|date}}</p>
+                </div>
+              </div>
+            {% empty %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
