@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'photos.apps.PhotosConfig',
+    'projects.apps.ProjectsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
      # Simplified static file serving.
@@ -59,7 +67,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'gallery.urls'
+ROOT_URLCONF = 'awards.urls'
+
+
+UPLOADCARE = {
+    'pub_key': '07846351ac8b6e4bae39',
+    'secret': '2f05a4bab735112a5881',
+}
+
 
 TEMPLATES = [
     {
@@ -77,7 +92,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gallery.wsgi.application'
+WSGI_APPLICATION = 'awards.wsgi.application'
 
 
 # Database
@@ -155,3 +170,11 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'index'
+
+LOGOUT_REDIRECT_URL = 'login'
+
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())
