@@ -1,0 +1,24 @@
+{% extends 'registration/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 mt-4">
+            <div class="card  mt-5" style="box-shadow: 2px 2px 5px grey; border: none; ">
+                <div class="card-body mb-3 mr-3 ml-3">
+                    Don't have an account? <a href="{% url 'signup' %}">signup</a><br><br>
+                    <form action="" method="post" novalidate >
+                        {% csrf_token%}
+                        {{ form|crispy}}
+                        <a href="{% url 'index' %}"> <button type="submit" class="btn btn-info btn-sm D-block mx-auto"> LOGIN</button> </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+{% endblock %}

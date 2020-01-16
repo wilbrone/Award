@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'rest_framework',
+    'crispy_forms',
 ]
 
 REST_FRAMEWORK = {
