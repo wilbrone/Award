@@ -1,6 +1,6 @@
 # Awards
 
-#### Awards App, 23rd Nov, 2019
+#### Awards App, 10th Jan, 2020
 #### By **Wilbrone**
 ## Description
 this is an application that helps users upload their projects and let other rate the projects for them.s
@@ -28,4 +28,4 @@ wilbroneokoth@gmail.com
 
 ### License
 *MIT License*
-Copyright (c) 2019 **Wilbrone Baron**
+Copyright (c) 2020 **Wilbrone Baron**
