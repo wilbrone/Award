@@ -1,7 +1,7 @@
 {% load crispy_forms_tags %}
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: black; margin-bottom: 100px;">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}"> <strong class="mr-4 brand"> Awwards</strong></a>
+        <a class="navbar-brand" href="{% url 'index' %}"> <strong class="mr-4 brand"> AwArDs</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,13 +28,13 @@
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item text-center" href="{% url 'profile' user.username %}">Profile</a>
                         <hr>
-                        <a href="{% url 'logout' %}" class="text-secondary text-center dropdown-item">Log Out</a>
+                        <a href="{% url 'logout' %}" class="text-secondary text-center dropdown-item">LogOut</a>
 
 
                     </div>
                 </li>
                 {% else %}
-                <a href="{% url 'login' %}" style="margin-right: 20px;" class="login btn btn-sm btn-info"> REGISTER/LOGIN </a>
+                <a href="{% url 'login' %}" style="margin-right: 20px;" class="login btn btn-sm btn-info"> Register/LogIn </a>
                 {% endif %}
                 <a href="{% url 'posts' %}" class="login btn btn-sm btn-info"> UPLOAD PROJECT </a>
             </ul>
