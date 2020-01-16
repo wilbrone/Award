@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Profile, Project
+from .models import Profile, Project, Rating
 from django.db import models
 from pyuploadcare.dj.forms import ImageField
 
@@ -23,7 +23,7 @@ class UploadProfile(forms.ModelForm):
         model = Profile
         fields = ('profile_pic', 'bio', 'location')
 
-# class RatingsForm(forms.ModelForm):
-#     class Meta:
-#         model = Rating
-#         fields = ['design', 'usability', 'content']
+class RatingsForm(forms.ModelForm):
+    class Meta:
+        model = Rating
+        fields = ['design', 'usability', 'content']
